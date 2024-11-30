@@ -1,70 +1,137 @@
-# Getting Started with Create React App
+# Task Management System
+A web-based application for managing tasks efficiently. The system allows users to create, edit, delete, and manage tasks with priority levels. It also supports user authentication and authorization to ensure secure access.
+## Features
+  + Task Creation: Users can create new tasks with a title, description, and due date.
+  + Task Management:
+    +   View a list of tasks with pagination.
+      +  Edit task details (title, description, and due date).
+    +  Delete tasks with a confirmation prompt.
+    + Update task statuses (e.g., pending, completed).
+  + Priority Management:
+     + Tasks can be assigned priority levels.
+     + Move tasks between different priority categories.
++ User Authentication:
+    + Register and login securely using hashed passwords.
+    +   Authorization to ensure only logged-in users can access tasks.
++ Visual Representation:
+    + Color-coded priority lists for easy distinction.
++ Responsive Design:
+    +  Optimized for both desktop and mobile devices.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Tech Stack
++ Frontend:
+    + HTML, CSS, JavaScript (with React.js)
++ Backend:
+   + Node.js, Express.js
++ Database:
+    + MongoDB
++ Authentication:
+  + JWT (JSON Web Tokens)
++ Styling:
+  + CSS with a clean and responsive design
++ Development Tools:
+    + Visual Studio Code
+    + Postman (for API testing)
+ 
+## Installation and Setup
+Follow these steps to set up the project locally:
+#### 1. Clone the Repository
+    git clone https://github.com/<your-username>/task-management-system.git
+    cd task-management-system
+#### 2. Install Dependencies
+Install both frontend and backend dependencies:
+ <!---  Navigate to the frontend directory -->
+    cd frontend
+    npm install
 
-## Available Scripts
+ <!-- Navigate to the backend directory -->
+      cd ../backend
+      npm install
+#### 3. Configure Environment Variables
+ Create a .env file in the backend directory and add the following: 
+ 
+    PORT=5000
+    MONGO_URI=your-mongodb-uri
+    JWT_SECRET=your-secret-key
+#### 4. Start the Application
+Run the frontend and backend servers simultaneously:
 
-In the project directory, you can run:
+    Start the backend server
+    cd backend
+    npm start
 
-### `npm start`
+<!-- In a new terminal, start the frontend server -->
+      
+      cd frontend
+      npm start
+The application will be accessible at:
+    + Frontend: http://localhost:3000
+    + Backend: http://localhost:5000
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Usage
+1. Register and Login:
+    + New users can register with their name, email, and password.
+    + Existing users can log in to access their tasks.
+2. Task Management:
+    + Create tasks with a title, description, due date, and priority.
+    + Edit task details or mark tasks as completed.
+    +  Delete tasks with a confirmation prompt.
+3. Priority Visualization:
+   + View tasks categorized by priority, with color-coded lists for easy identification.
+  
+## Project Structure
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+        task-management-system/
+    ├── backend/               # Backend folder
+    │   ├── models/            # MongoDB models (e.g., Task, User)
+    │   ├── routes/            # API route handlers
+    │   ├── middleware/        # Authentication middleware
+    │   ├── server.js          # Entry point for backend
+    │   └── .env               # Environment variables
+    ├── frontend/              # Frontend folder
+    │   ├── public/            # Public assets
+    │   ├── src/               # React components and pages
+    │   ├── App.js             # Main React app component
+    │   ├── index.js           # React entry point
+    │   └── package.json       # Frontend dependencies
+    ├── README.md              # Documentation file
+    └── .gitignore             # Files and folders to ignore in version control
 
-### `npm test`
+## API Endpoints
+### Authentication
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    Method	Endpoint	Description
+    POST	/api/users/register	Register a new user
+    POST	/api/users/login	Log in a user
+### Tasks
+    Method	Endpoint	Description
+    GET	/api/tasks	Fetch all tasks
+    POST	/api/tasks	Create a new task
+    GET	/api/tasks/:id	Get details of a specific task
+    PUT	/api/tasks/:id	Update task details
+    DELETE	/api/tasks/:id	Delete a task
 
-### `npm run build`
+## Future Enhancements
+   + Add task reminders and notifications.
+  +  Implement file attachments for tasks.
++    Allow sharing tasks with other users.
+  + Add a dashboard with detailed analytics.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Contributing
+Contributions are welcome! To contribute:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Fork the repository.
+2. Create a new branch (git checkout -b feature-name).
+3. Commit your changes (git commit -m "Add feature").
+4. Push to the branch (git push origin feature-name).
+5. Open a Pull Request.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-### `npm run eject`
+## Contact
+For questions or support, please contact:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   + Name: Rahul Sharma
+  + Email: rahul@example.com
+  + GitHub: Rahulqqq
