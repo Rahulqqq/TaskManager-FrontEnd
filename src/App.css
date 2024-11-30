@@ -1,38 +1,139 @@
-.App {
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Body styling */
+body {
+  background-color: #f0f4f8; /* Light background color */
+  color: #333; /* Dark text color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Main container styling */
+.container {
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #ffffff; /* White background for main content */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Heading Styles */
+h1, h2 {
+  color: #4CAF50; /* Green color for headings */
+  margin-bottom: 20px;
+  font-size: 2rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Form Container */
+form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Input Fields Styling */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+  margin: 10px 0;
+}
+
+textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+/* Buttons Styling */
+button {
+  background-color: #4CAF50; /* Green background */
   color: white;
+  border: none;
+  padding: 12px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #45a049; /* Darker green on hover */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Centering Task Details */
+.task-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Styling task detail display */
+.task-details p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+/* Links */
+a {
+  color: #4CAF50;
+  text-decoration: none;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Error and Loading Messages */
+p.error, p.loading {
+  font-size: 1.1rem;
+  color: #f44336; /* Red for error messages */
+  margin-top: 15px;
+}
+
+/* Add styling to the Back Button */
+button.back-button {
+  background-color: #f44336; /* Red for back button */
+  margin-top: 20px;
+}
+
+button.back-button:hover {
+  background-color: #e53935; /* Darker red on hover */
+}
+
+.low {
+  color: green;
+}
+
+.medium {
+  color: orange;
+}
+
+.high {
+  color: red;
 }
